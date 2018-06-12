@@ -12,6 +12,7 @@ gem 'bootstrap-sass', '~> 3.3', '>= 3.3.7'
 gem 'rails', '~> 5.1.3'
 # Use sqlite3 as the database for Active Record
 #gem 'mysql2'
+# gem 'sqlite3'
 gem 'devise'
 # Use Puma as the app server
 gem 'puma', '~> 3.7'
@@ -40,7 +41,8 @@ group :development, :test do
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
   # Adds support for Capybara system testing and selenium driver
   gem 'capybara', '~> 2.13'
-  gem 'mysql2'
+ # gem 'mysql2'
+  gem 'sqlite3'
   gem 'selenium-webdriver'
      
 end

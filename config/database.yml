@@ -5,45 +5,45 @@
 #   gem 'sqlite3'
 #
 
-# default: &default
-#   adapter: sqlite3
-#   pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
-#   timeout: 5000
 default: &default
-  adapter: mysql2
-  encoding: utf8
-  pool: 2
-  username: root
-  password: mehta
+  adapter: sqlite3
+  pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
+  timeout: 5000
+# default: &default
+#   adapter: mysql2
+#   encoding: utf8
+#   pool: 2
+#   username: root
+#   password: mehta
 
-
-# development:
-#   <<: *default
-#   database: db/development.sqlite3
 
 development:
-  #<<: *default
-  adapter: 'mysql2_makara'
-  database: monu_db
-  # add a makara subconfig
-  makara:
+  <<: *default
+  database: db/development.sqlite3
+
+# development:
+#   #<<: *default
+#   adapter: 'mysql2_makara'
+#   database: monu_db
+#   # add a makara subconfig
+#   makara:
 
     # the following are default values
-    blacklist_duration: 5
-    master_ttl: 5
-    sticky: true
+    # blacklist_duration: 5
+    # master_ttl: 5
+    # sticky: true
 
     # list your connections with the override values (they're merged into the top-level config)
     # be sure to provide the role if master, role is assumed to be a slave if not provided
-    connections:
-      - role: master
-        host: localhost
-        username: root
-        password: mehta 
-      - role: slave
-        host: localhost
-        username: root
-        password: mehta
+    # connections:
+    #   - role: master
+    #     host: localhost
+    #     username: root
+    #     password: mehta 
+    #   - role: slave
+    #     host: localhost
+    #     username: root
+    #     password: mehta
 
 
 # Warning: The database defined as "test" will be erased and
